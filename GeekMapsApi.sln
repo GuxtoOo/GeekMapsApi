@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekMapsApi", "GeekMapsApi\GeekMapsApi.csproj", "{501A0371-273D-4A16-A084-DFBBD7CA6518}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A55F6DF1-4232-4CD8-A004-83BA71D4FB91} = {A55F6DF1-4232-4CD8-A004-83BA71D4FB91}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekMapsApi.Domain", "GeekMapsApi.Domain\GeekMapsApi.Domain.csproj", "{B27B8183-68DC-4160-96B4-2A395FC0F63B}"
 EndProject
