@@ -12,7 +12,7 @@ public static class DependencyInjectionConfig
         var connectionString = configuration.GetConnectionString("DBConnectionString");
 
         //Config Services
-        services.AddDbContext<GeekMapsApiDbContext>(options =>
+        services.AddDbContext<GeekMapsDbContext>(options =>
         {
             options.UseSqlServer(connectionString);
             options.EnableSensitiveDataLogging(true);
