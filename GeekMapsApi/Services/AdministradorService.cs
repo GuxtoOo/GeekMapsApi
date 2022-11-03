@@ -20,9 +20,9 @@ public class AdministradorService : IAdministradorService
 
     public async Task<AdministradorDto> PostAsync(AdministradorDto model)
     {
-        //var email = await _administradorRepository.GetByEmailAsync(model.Email);
-        //if (email != null)
-        //    throw new Exception("O email informado já está em uso");
+        var email = await _administradorRepository.GetByEmailAsync(model.Email);
+        if (email != null)
+            throw new Exception("O email informado já está em uso");
 
         var adm = _mapper.Map<Administrador>(model);
 
