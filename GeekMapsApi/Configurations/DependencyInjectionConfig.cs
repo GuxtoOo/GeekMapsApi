@@ -1,4 +1,5 @@
-﻿using GeekMapsApi.Settings;
+﻿using GeekMapsApi.Infrastructure.Data;
+using GeekMapsApi.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;

@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GeekMapsApi.AggregatesModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace GeekMapsApi.Infrastructure.Data;
 
 public class GeekMapsDbContext : DbContext
 {
-    public GeekMapsDbContext(DbContextOptions<GeekMapsDbContext> options) : base(options) { }
+    public GeekMapsDbContext(DbContextOptions<GeekMapsDbContext> options) : base(options) { }    
 
-    
+    public DbSet<Administrador> Administrador { get;set; }
 }

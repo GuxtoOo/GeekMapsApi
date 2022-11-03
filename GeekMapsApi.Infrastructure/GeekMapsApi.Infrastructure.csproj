@@ -11,4 +11,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GeekMapsApi.Domain\GeekMapsApi.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
