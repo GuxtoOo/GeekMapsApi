@@ -1,6 +1,11 @@
 ﻿using GeekMapsApi.Infrastructure.Data;
+using GeekMapsApi.Infrastructure.Repository;
+using GeekMapsApi.Infrastructure.Repository.Interfaces;
+using GeekMapsApi.Services;
+using GeekMapsApi.Services.Interfaces;
 using GeekMapsApi.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -40,8 +45,11 @@ public static class DependencyInjectionConfig
         services.AddCors();
 
         //Application
+        services.AddScoped<IAdministradorService, AdministradorService>();
+        services.AddScoped<IEventoService, EventoService>();
 
         //Infrastructure
+        services.AddScoped<IAdministradorRepository, AdministradorRepository>();
 
         return services;
     }
