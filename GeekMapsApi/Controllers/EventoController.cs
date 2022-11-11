@@ -5,24 +5,24 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace GeekMapsApi.Controllers;
 
-public class AdmnistradorController : BaseController
+public class EventoController : BaseController
 {
-    private readonly IAdministradorService _administradorService;
+    private readonly IEventoService _eventoService;
 
-    public AdmnistradorController(IAdministradorService administradorService)
+    public EventoController(IEventoService eventoService)
     {
-        _administradorService = administradorService;
+        _eventoService = eventoService;
     }
 
-    [HttpPost("/geekMaps/adm")]
-    [SwaggerOperation("Adiciona um novo administrador")]
-    public async Task<IActionResult> PostAsync([FromBody] AdministradorDto request)
+    [HttpPost("/geekMaps/evento")]
+    [SwaggerOperation("Adiciona um novo evento")]
+    public async Task<IActionResult> PostAsync([FromBody] EventoDto request)
     {
         if (!ModelState.IsValid)
             return UnprocessableEntity(ModelState.Values.SelectMany(v => v.Errors.Select(b => b.ErrorMessage)));
         try
         {
-            var response = await _administradorService.PostAsync(request);
+            var response = await _eventoService.PostAsync(request);
             return Ok(response);
         }
         catch (Exception ex)
