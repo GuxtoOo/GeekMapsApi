@@ -22,8 +22,8 @@ public class EventoController : BaseController
             return UnprocessableEntity(ModelState.Values.SelectMany(v => v.Errors.Select(b => b.ErrorMessage)));
         try
         {
-            var response = await _eventoService.PostAsync(request);
-            return Ok(response);
+            await _eventoService.PostAsync(request);
+            return Ok(request);
         }
         catch (Exception ex)
         {
