@@ -30,4 +30,12 @@ public class EventoController : BaseController
             return BadRequest(new List<string> { ex.Message });
         }        
     }
+
+    [HttpGet("/geekMaps/evento/{id:int}")]
+    [SwaggerOperation("Trás um evento específico.")]
+    public async Task<IActionResult> GetAsync(int id)
+    {
+        var response = await _eventoService.GetAsync(id);
+        return Ok(response);
+    }
 }
