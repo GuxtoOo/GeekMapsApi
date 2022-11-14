@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using GeekMapsApi.AggregatesModels;
+using GeekMapsApi.DTOs;
 using System.Reflection;
 
 namespace GeekMapsApi.Configurations;
@@ -20,6 +22,7 @@ public class AutoMapperFastMapper : Profile
 {
     public AutoMapperFastMapper()
     {
-
+        CreateMap<Administrador, AdministradorDto>().ReverseMap();
+        CreateMap<Evento, EventoDto>().ReverseMap();
     }
 }
