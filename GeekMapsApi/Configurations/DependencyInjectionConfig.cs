@@ -50,6 +50,7 @@ public static class DependencyInjectionConfig
 
         //Infrastructure
         services.AddScoped<IAdministradorRepository, AdministradorRepository>();
+        services.AddScoped<IEventoRepository, EventoRepository>();
 
         return services;
     }
