@@ -30,7 +30,7 @@ public class EventoService : IEventoService
     {
         var response = await _eventoRepository.GetAsync(id);
         if (response == null)
-            throw new Exception("Não foi encontrado nenhum evento com esse id.");
-        return response;
+            throw new Exception("Não foi encontrado nenhum evento com esse id.");        
+        return _mapper.Map<EventoDto>(response);
     }
 }
