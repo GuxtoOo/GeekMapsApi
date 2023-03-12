@@ -13,7 +13,7 @@ public class EventoRepository : IEventoRepository
     {
         _geekMapsDb = geekMapsDb;
     }
-
+    
     public async Task PostAsync(Evento evento)
     {
         _geekMapsDb.Evento.Add(evento);
@@ -22,9 +22,9 @@ public class EventoRepository : IEventoRepository
 
     public async Task<Evento> GetAsync(int id)
     {
-        var entity =  await _geekMapsDb.Evento
+        var response = await _geekMapsDb.Evento
             .Where(s => s.Id == id)
             .FirstOrDefaultAsync();
-        return entity;
-    }    
+        return response;
+    }
 }
